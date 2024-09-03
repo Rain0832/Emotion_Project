@@ -1,0 +1,15 @@
+a {
+    text-decoration: none;
+
+}
+li {
+    list-style: none;
+}
+body{
+    magin: 0;
+    background-color: #f3f3f3;
+}
+button{
+    background-color: white;
+    border: none;
+}

@@ -1,0 +1,185 @@
+/* 边界处理 */
+::after,::before{
+    box-sizing: border-box;
+}
+body{
+    width=100%;
+    height: 100vh;
+    position: relative;
+    margin: 0;
+    padding: 0 0 0 0;
+    transition: 0.5s;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.string{
+    color: #b4b4b4;
+}
+.head-portrait{
+    width: 30px;
+    border-radius: 100px;
+    overflow: hidden;
+}
+.icon{
+    width: 20px;
+    height: 20px;
+}
+
+
+
+.nav-sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: black;
+    width: 250px;
+    height: 100vh;
+    background-color: white;
+    padding: 1.5rem 1.5rem 2rem;
+    overflow: hidden;
+}
+.nav-sidebar span{
+    color: black;
+}
+
+.nav-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.nav-brand{
+    display: grid;
+    grid-template-columns: max-content max-content;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.nav-toggle{
+    font-size: 1.25rem;
+    padding: 0.75rem;
+    cursor: pointer;
+}
+.nav-logo{
+    color: black;
+    font-size: larger;
+    font-weight: 400;
+}
+.nav-icon{
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    column-gap: 0.75rem;
+    padding: 1.25rem 0.75rem;
+    color: black;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.nav-icon:hover{
+    background-color: blanchedalmond;
+}
+.active{
+    background-color: blanchedalmond
+}
+
+.nav-up{
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    background-color: white;
+    margin-top: 0;
+    margin-left: 298px;
+    border-left: 1px solid rgb(195, 195, 195);
+    line-height: 20px;
+}
+.nav-up .wrap{
+    padding: 0 2rem;
+    margin: 0 auto;
+    float: left;
+    width: 1100px;
+    height: 60px;
+    align-items: center;
+}
+#search-icon{
+    padding-left: 10px;
+}
+.nav-up .wrap .search{
+    display: flex;
+    align-items: center;
+    margin: auto auto;
+    position: relative;
+    padding: 12.4px 0 ;
+    float: left;
+    width: 700px;
+}
+.nav-up .wrap .search button{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.nav-up .wrap .nav-bar{
+    width: 300px;
+    height: 60px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    float: left;
+    margin: auto;
+}
+.nav-up .wrap .nav-bar ul{
+    display: flex;
+    align-items: center;
+}
+.nav-up .wrap .nav-bar li{
+    display: flex;
+    margin: 0 5px;
+    align-items: center;
+    float: left;
+}
+.nav-up .wrap .nav-bar li a{
+    border-radius: 0.5rem;
+    color: black;
+}
+.nav-up .wrap .search input{
+    padding: 0 10px;
+    width: 650px;
+    height: 30px;
+    outline: none;
+    display: flex;
+    align-items: center;
+}
+.user{
+    padding-left: 50px;
+}
+.nav-up .wrap .nav-bar li a:hover{
+    background-color: blanchedalmond;
+}
+.nav-up .wrap .nav-bar li a .user-wrap{
+    padding: 0 20px;
+}
+.content{
+    position: fixed;
+    margin-left: 298px;
+    margin-top: 60px;
+    width: 1200px;
+    height: 100vh;
+}
+.content .wrap{
+    width: 1000px;
+    height: 100vh;
+    margin: 0 auto;
+    text-align: center;
+
+}
+.content .wrap .confusion_matrix{
+    margin-top: 50px;
+    width: 500px;
+
+}
+
+
+

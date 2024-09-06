@@ -43,6 +43,13 @@ result = confusion_matrix(y_train, y_pred)  # 计算混淆矩阵
 def home():
     return render_template('index.html',conclusion=conclusion)
 
+@app.route('/team')
+def team():
+    return render_template('team.html')
+
+@app.route('/consult')
+def consult():
+    return render_template('consult.html')
 
 @app.route('/project')
 def show_confusion_matrix():  # 我将函数名改成了show_confusion_matrix

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
-<body class="body">
+<body class="body" >
     <!-- 导航栏 start-->
     <div class="nav">
         <!-- 侧边栏 start -->
@@ -72,11 +72,10 @@
         </div>
     </div>
     <!-- 导航栏 end -->
-    <div class="content">
-        <img src="{{ url_for('static', filename='img/背景.jpeg') }}" alt="" class="background">
+    <div class="content" style="overflow-y: scroll;">
         <div class="wrap">
-            <h1>您好，这是网站的主页</h1>
-            <div><button>开始测量</button></div>
+            <h1 style="margin-top: 300px;">您好，这是网站的主页</h1>
+            <div><a href="http://127.0.0.1:5000/test" class="start">开始测量</a></div>
         </div>
     </div>
 </body>

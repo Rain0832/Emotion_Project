@@ -2,6 +2,7 @@
 ::after,::before{
     box-sizing: border-box;
 }
+
 body{
     width:100%;
     height: 100vh;
@@ -24,8 +25,8 @@ ul{
     overflow: hidden;
 }
 .icon{
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
 }
 
 
@@ -34,15 +35,14 @@ ul{
     position: fixed;
     top: 0;
     left: 0;
-    color: black;
     width: 250px;
     height: 100vh;
-    background-color: white;
+    background-color: rgb(92, 102, 171);
     padding: 1.5rem 1.5rem 2rem;
     overflow: hidden;
 }
 .nav-sidebar span{
-    color: black;
+    color: white;
 }
 
 .nav-list{
@@ -63,7 +63,7 @@ ul{
     cursor: pointer;
 }
 .nav-logo{
-    color: black;
+    color: white;
     font-size: larger;
     font-weight: 400;
 }
@@ -73,27 +73,29 @@ ul{
     align-items: center;
     column-gap: 0.75rem;
     padding: 1.25rem 0.75rem;
-    color: black;
+    color: white;
     border-radius: 0.5rem;
     margin-bottom: 1rem;
-    transition: 0.3s;
+    transition: all 0.3s;
     cursor: pointer;
 }
 .nav-icon:hover{
-    background-color: blanchedalmond;
+    box-shadow: 5px 5px 0px 5px rgba(0, 0, 0, 0.4);
+    font-size: larger;
+    background-color: rgb(254, 176, 5);
 }
 .active{
-    background-color: blanchedalmond
+    background-color: rgb(254, 176, 5)
 }
 
 .nav-up{
     width: 100%;
     height: 60px;
     position: fixed;
-    background-color: white;
+    background-color: rgb(92, 102, 171);
     margin-top: 0;
     margin-left: 298px;
-    border-left: 1px solid rgb(195, 195, 195);
+    border-left: 1px solid rgb(92, 102, 171);
     line-height: 20px;
 }
 .nav-up .wrap{
@@ -108,6 +110,7 @@ ul{
     padding-left: 10px;
 }
 .nav-up .wrap .search{
+    background-color: rgb(92, 102, 171);
     display: flex;
     align-items: center;
     margin: auto auto;
@@ -117,11 +120,14 @@ ul{
     width: 700px;
 }
 .nav-up .wrap .search button{
+    color: white;
+    background-color: rgb(92, 102, 171);
     cursor: pointer;
     display: flex;
     align-items: center;
 }
 .nav-up .wrap .nav-bar{
+    color: white;
     width: 300px;
     height: 60px;
     padding: 0 20px;
@@ -142,7 +148,7 @@ ul{
 }
 .nav-up .wrap .nav-bar li a{
     border-radius: 0.5rem;
-    color: black;
+    color: white;
 }
 .nav-up .wrap .search input{
     padding: 0 10px;
@@ -156,24 +162,34 @@ ul{
     padding-left: 50px;
 }
 .nav-up .wrap .nav-bar li a:hover{
-    background-color: blanchedalmond;
+    background-color: rgb(254, 176, 5);
 }
 .nav-up .wrap .nav-bar li a .user-wrap{
     padding: 0 20px;
 }
+::-webkit-scrollbar{
+    width: 10px;
+    height: 100%;
+    background-color: rgb(92, 102, 171);
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(254, 176, 5);
+    border-radius: 15px;
+}
 .content{
+    overflow-y: scroll;
     text-align: center;
     position: fixed;
     margin-left: 298px;
     margin-top: 60px;
-    width: 1300px;
+    width: 1230px;
     height: 100vh;
 
 
 }
 .content .wrap{
-    position: absolute;
-    top: 0;
+    color: rgb(50, 54, 118);
+    margin: 0 auto;
     left: 10px;
     width: 1000px;
     height: 100vh;
@@ -188,6 +204,14 @@ ul{
 }
 
 .background{
+    opacity: 70%;
     width: 100%;
     height: 100vh;
+}
+.start{
+    font-size: larger;
+
+    color: rgb(50, 54, 118);
+    background-color: rgb(254, 176, 5);
+
 }

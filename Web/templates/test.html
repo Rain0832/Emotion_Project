@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
-<body class="body">
+<body class="body" >
     <!-- 导航栏 start-->
     <div class="nav">
         <!-- 侧边栏 start -->
@@ -73,10 +73,8 @@
     </div>
     <!-- 导航栏 end -->
     <div class="content">
-        <img src="{{ url_for('static', filename='img/背景.jpeg') }}" alt="" class="background">
         <div class="wrap">
-            <h1>您好，这是网站的主页</h1>
-            <div>根据您的生理数据，我们的情绪模型预测您当前的状态为：</div>
+            <div style="margin-top: 300px;">根据您的生理数据，我们的情绪模型预测您当前的状态为：</div>
             <div class="conclusion">预测结果:{{conclusion}}</div>
 
         </div>

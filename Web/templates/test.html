@@ -22,11 +22,11 @@
                     </a>
                 </div>
                 <div class="nav-list">
-                    <a href="http://127.0.0.1:5000/" class="nav-icon ">
+                    <a href="http://127.0.0.1:5000/" class="nav-icon  active">
                         <img  src="{{ url_for('static', filename='img/iconfont/主页.svg') }}" alt="" class="icon">
                         <span>主页</span>
                     </a>
-                    <a href="http://127.0.0.1:5000/team" class="nav-icon active">
+                    <a href="http://127.0.0.1:5000/team" class="nav-icon">
                         <img src="{{ url_for('static', filename='img/iconfont/团队.svg') }}" alt="" class="icon">
                         <span>团队</span>
                     </a>
@@ -73,21 +73,12 @@
     </div>
     <!-- 导航栏 end -->
     <div class="content">
+        <img src="{{ url_for('static', filename='img/背景.jpeg') }}" alt="" class="background">
         <div class="wrap">
-            <h1 style="text-align: center;">您好，这是我们的团队介绍</h1>
-            <div>
-                <div>
-                    <h2 style="text-align: center;">团队成员</h2>
-                    <h3>石博文</h3><p>电子科技大学2023级本科生</p>
-                    <h3>黄昌斌</h3><p>电子科技大学2023级本科生</p>
-                    <h3>潘泉</h3><p>电子科技大学2023级本科生</p>
-                    <h3>刘明昊</h3><p>电子科技大学2023级本科生</p>
-                </div>
-                <div>
-                    <h2 style="text-align: center;">指导教师</h2>
-                    <h3>丁晓蓉</h3><p>电子科技大学特聘副研究员，主要研究方向为可穿戴设备、健康信息学及智能医疗。</p>
-                </div>
-            </div>
+            <h1>您好，这是网站的主页</h1>
+            <div>根据您的生理数据，我们的情绪模型预测您当前的状态为：</div>
+            <div class="conclusion">预测结果:{{conclusion}}</div>
+
         </div>
     </div>
 </body>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emotion Helper</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/normal.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 </head>
 
 <body class="body" >
@@ -52,11 +52,11 @@
                 <div class="nav-bar">
                     <ul>
                         <li class="button">
-                            <a href="#">注册</a>
+                            <a href="http://127.0.0.1:5000/sign">注册</a>
                         </li>
                         <li><span class="string">|</span></li>
                         <li class="button">
-                            <a href="#">登录</a>
+                            <a href="http://127.0.0.1:5000/sign">登录</a>
                         </li>
                         <li class="user button">
                             <a href="#" class="user-wrap">
@@ -73,9 +73,11 @@
     </div>
     <!-- 导航栏 end -->
     <div class="content" style="overflow-y: scroll;">
+        <div class="cover"><img src="{{ url_for('static', filename='img/封面.jpeg') }}" alt=""></div>
         <div class="wrap">
-            <h1 style="margin-top: 300px;">您好，这是网站的主页</h1>
-            <div><a href="http://127.0.0.1:5000/test" class="start">开始测量</a></div>
+            <h1>拥有好的情绪，拥抱好的生活!</h1>
+            <div class="underline">__________________</div>
+            <div><a href="http://127.0.0.1:5000/test" class="start"><img src="{{ url_for('static', filename='img/iconfont/开始.svg') }}" alt="" class="icon">START MEARSURE</a></div>
         </div>
     </div>
 </body>

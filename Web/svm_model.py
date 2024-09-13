@@ -42,6 +42,7 @@ svm_clf.fit(X_train, y_train)  # 输入训练集以及对应标签
 # 取第713号的数据，作为新样本，预测结果
 predict_value = svm_clf.predict([X.iloc[713].values]) # [X.iloc[713].values]二维数组
 # print("predict: ",predict_value)
+# predict_value = 0
 if predict_value==1:
     conclusion = "积极！"
     print("积极!")

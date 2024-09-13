@@ -83,6 +83,10 @@ def show_confusion_matrix():  # 我将函数名改成了show_confusion_matrix
     # 将图像传递给模板
     return render_template('project.html', image_data=image_data)
 
+@app.route('/sign')
+def sign():
+    return render_template('sign.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)

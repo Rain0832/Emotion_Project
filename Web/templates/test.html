@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emotion Helper</title>
+    <title>Emotion Detection</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/normal.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/test.css') }}">
 </head>
 
 <body class="body" >
@@ -74,9 +74,12 @@
     <!-- 导航栏 end -->
     <div class="content">
         <div class="wrap">
-            <div style="margin-top: 300px;">根据您的生理数据，我们的情绪模型预测您当前的状态为：</div>
-            <div class="conclusion">预测结果:{{conclusion}}</div>
-
+            <div class="emotion_classification">
+                <div class="conclusion">
+                    预测结果:
+                    <span>{{conclusion}}</span>
+                </div>
+            </div>
         </div>
     </div>
 </body>

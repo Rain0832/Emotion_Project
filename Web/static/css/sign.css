@@ -1,15 +1,21 @@
 body{
     font-family: sans-serif;
-    background-image: url("D:\桌面\Gitfile\Web\static\img\bg.jpg");
+    
     background-repeat: no-repeat;
     /* 溢出隐藏 */
     overflow: hidden;
     background-size: cover;
 }
+.background_img{
+    width: 100%;
+    height: 100vh;
+}
 
 .container{
+    top: 0;
+    position: absolute;
     width: 380px;
-    margin: 7% auto;
+    margin: 7% 37%;
     border-radius: 25px;
     background-color: rgba(0, 0, 0, 0.1);
     /* 阴影部分 */
@@ -104,10 +110,9 @@ body{
     background-color: #fff; 
 }
 
- #username { 
-    background: url(D:\桌面\Gitfile\Web\static\img\iconfont\user.svg) 20px 14px no-repeat; 
-}
 
- #password { 
-    background: url(D:\桌面\Gitfile\Web\static\img\iconfont\lock.svg) 23px 11px no-repeat; 
+.iconfont{
+    transform: translateX(50px) translateY(7px);
+    width: 30px;
+    height: 30px;
 }

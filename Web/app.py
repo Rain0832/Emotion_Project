@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 from sklearn.svm import SVC
 from sklearn.pipeline import Pipeline
@@ -11,10 +12,31 @@ from flask import Flask, render_template
 from io import BytesIO
 import base64
 from svm_model import conclusion
+import time
+from flask_socketio import SocketIO, emit
+import random
+import threading
+
+plt.rcParams['font.sans-serif'] = ['SimHei']  # 设置中文字体为黑体
+plt.rcParams['axes.unicode_minus'] = False  # 解决负号'-'显示为方块的问题
 
 # 设置使用非交互式后端
 matplotlib.use('Agg')
+
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'secret!'
+socketio = SocketIO(app)
+
+random_numbers = []
+
+def generate_random_numbers():
+    while True:
+        num = random.randint(1, 30)
+        random_numbers.append(num)
+        if len(random_numbers) > 15:  # 限制列表大小，只保留最新的10个数据点
+            random_numbers.pop(0)
+        socketio.emit('new random number', {'number': num})
+        socketio.sleep(0.5)
 
 # 加载数据
 df = pd.read_excel(r"Data.xlsx",index_col=0, usecols=range(0, 52), nrows=None)
@@ -39,6 +61,7 @@ svm_clf.fit(X_train, y_train)
 y_pred = cross_val_predict(svm_clf, X_train, y_train)  # 预测的y值
 result = confusion_matrix(y_train, y_pred)  # 计算混淆矩阵
 
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -53,9 +76,17 @@ def consult():
 
 @app.route('/test')
 def test():
-    return render_template('test.html',conclusion=conclusion)
+       
+# 创建雷达图
+        
+        return render_template('test.html',conclusion=conclusion)
+
+@socketio.on('connect')
+def on_connect():
+    threading.Thread(target=generate_random_numbers).start()
 
 @app.route('/project')
+
 def show_confusion_matrix():  # 我将函数名改成了show_confusion_matrix
     plt.figure(figsize=(8, 6))
     sns.heatmap(result,
@@ -89,4 +120,4 @@ def sign():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    socketio.run(app, debug=True,allow_unsafe_werkzeug=True)

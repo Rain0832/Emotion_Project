@@ -3,10 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>Emotion Detection</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/normal.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/test.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.min.js"></script>
 </head>
 
 <body class="body" >
@@ -15,7 +17,7 @@
         <!-- 侧边栏 start -->
         <div class="nav-sidebar">
             <div class="wrap">
-                <div class="nav-brand">  
+                <div class="nav-brand">
                     <a href="#" class="nav-logo">EMOTION</a>
                     <a href="#" class="nav-toggle">
                         <img src="{{ url_for('static', filename='img/iconfont/选项.svg') }}" alt="" class="icon">
@@ -30,11 +32,11 @@
                         <img src="{{ url_for('static', filename='img/iconfont/团队.svg') }}" alt="" class="icon">
                         <span>团队</span>
                     </a>
-                    <a href="http://127.0.0.1:5000/consult" class="nav-icon">                        
+                    <a href="http://127.0.0.1:5000/consult" class="nav-icon">
                         <img src="{{ url_for('static', filename='img/iconfont/交谈.svg') }}" alt="" class="icon">
                         <span>咨询</span>
                     </a>
-                    <a href="http://127.0.0.1:5000/project" class="nav-icon">                        
+                    <a href="http://127.0.0.1:5000/project" class="nav-icon">
                         <img src="{{ url_for('static', filename='img/iconfont/项目.svg') }}" alt="" class="icon">
                         <span>项目</span>
                     </a>
@@ -75,9 +77,63 @@
     <div class="content">
         <div class="wrap">
             <div class="emotion_classification">
-                <div class="conclusion">
+                <div>
+                    <div class="conclusion">
                     预测结果:
                     <span>{{conclusion}}</span>
+                    </div>
+                    <div class="wrap">
+                        <canvas id="myChart"></canvas>
+                        <script>
+                            var ctx = document.getElementById('myChart').getContext('2d');
+                            var chart;
+
+                            window.onload = function() {
+                                chart = new Chart(ctx, {
+                                    type: 'line',
+                                    data: {
+                                        labels: [],
+                                        datasets: [{
+                                            label: 'PPG',
+                                            data: [],
+                                            borderColor: 'rgb(75, 192, 192)',
+                                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                                        }]
+                                    },
+                                    options: {
+                                        responsive: true,
+                                        maintainAspectRatio: false,
+                                        scales: {
+                                            y: {
+                                                beginAtZero: true
+                                            }
+                                        }
+                                    }
+                                });
+
+                                var socket = io.connect('http://' + document.domain + ':' + location.port);
+
+                                socket.on('connect', function() {
+                                    console.log('Connected to server');
+                                });
+
+                                socket.on('new random number', function(data) {
+                                    // 使用当前时间戳作为标签
+                                    var newLabel = new Date().toLocaleTimeString();
+                                    chart.data.labels.push(newLabel);
+                                    chart.data.datasets[0].data.push(data.number);
+
+                                        if (chart.data.labels.length > 15) {
+                                            chart.data.labels.shift();
+                                            chart.data.datasets[0].data.shift();
+                                        }
+                                    chart.update();
+                                });
+                            };
+                        </script>
+
+
+                    </div>
                 </div>
             </div>
         </div>

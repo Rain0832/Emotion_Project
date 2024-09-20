@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登录页面</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/sign.css') }}">
+    <script src="{{ url_for('static', filename='js/sign.js') }}"></script> <!-- 引入JavaScript文件 -->
 </head>
 <body>
     <img src="{{ url_for('static', filename='img/bg.jpg') }}" alt="" class="background_img">
@@ -22,7 +23,8 @@
                 <img src="{{ url_for('static', filename='img/iconfont/lock.svg') }}" alt="" class="iconfont">
                 <input id="password" type="password" autocomplete="off" placeholder="登录密码">
             </div>
-                <button>登 录</button>
+            <!-- 增加id属性 -->
+            <button id="loginBtn">登 录</button>
         </div>
     </div>
 </body>

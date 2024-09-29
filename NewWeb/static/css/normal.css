@@ -1,0 +1,16 @@
+a {
+    text-decoration: none;
+
+}
+li {
+    list-style: none;
+}
+body{
+
+    margin: 0;
+    background-color: #f3f3f3;
+}
+button{
+    background-color: white;
+    border: none;
+}

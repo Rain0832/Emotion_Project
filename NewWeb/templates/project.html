@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" http-equiv="refresh" content="1000">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normal.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="body">
+    <!-- 导航栏 start-->
+    <div class="nav">
+        <!-- 侧边栏 start -->
+        <div class="nav-sidebar">
+            <div class="wrap">
+                <div class="nav-brand">
+                    <a href="#" class="nav-logo">EMOTION</a>
+                    <a href="#" class="nav-toggle">
+                        <img src="{{ url_for('static', filename='img/iconfont/选项.svg') }}" alt="" class="icon">
+                    </a>
+                </div>
+                <div class="nav-list">
+                    <a href="http://127.0.0.1:5000/" class="nav-icon ">
+                        <img src="{{ url_for('static', filename='img/iconfont/主页.svg') }}" alt="" class="icon">
+                        <span>主页</span>
+                    </a>
+                    <a href="http://127.0.0.1:5000/team" class="nav-icon">
+                        <img src="{{ url_for('static', filename='img/iconfont/团队.svg') }}" alt="" class="icon">
+                        <span>团队</span>
+                    </a>
+                    <a href="http://127.0.0.1:5000/consult" class="nav-icon">
+                        <img src="{{ url_for('static', filename='img/iconfont/交谈.svg') }}" alt="" class="icon">
+                        <span>咨询</span>
+                    </a>
+                    <a href="http://127.0.0.1:5000/project" class="nav-icon active">
+                        <img src="{{ url_for('static', filename='img/iconfont/项目.svg') }}" alt="" class="icon">
+                        <span>项目</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- 侧边栏 end -->
+        <!-- 导航条 start -->
+        <div class="nav-up">
+            <div class="wrap">
+                <div class="search">
+                    <input type="text" placeholder="情绪类型">
+                    <button id="search-icon"><img src="{{ url_for('static', filename='img/iconfont/搜索.svg') }}" alt=""
+                            class="icon"></button>
+                </div>
+                <div class="nav-bar">
+                    <ul>
+                        <li class="button">
+                            <a href="http://127.0.0.1:5000/sign">注册</a>
+                        </li>
+                        <li><span class="string">|</span></li>
+                        <li class="button">
+                            <a href="http://127.0.0.1:5000/sign">登录</a>
+                        </li>
+                        <li class="user button">
+                            <a href="#" class="user-wrap">
+                                <img src="{{ url_for('static', filename='img/头像.jpg') }}" alt="" class="head-portrait">
+                                <span>用户</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 导航条 end-->
+        </div>
+    </div>
+    <!-- 导航栏 end -->
+    <div class="content">
+        <div class="wrap">
+            <h1 style="text-align: center;">项目名称：基于可穿戴设备的情绪测量</h1>
+            <p style="text-indent: 2em;">
+                本项目旨在通过可穿戴设备实时监测大学生的情绪变化，尤其是负向情绪，并通过网站终端向用户及其重要联系人<br>
+                发出警告，帮助其进行情绪管理。该系统可为心理健康评估、疾病诊断、压力管理等领域提供有效的非侵入性工具。<br>
+            </p>
+            <p style="text-indent: 2em;">
+                项目计划结合皮肤电与脉搏波信号传感器进行数据采集，采用小波去噪和Butterworth滤波器进行数据预处理，<br>
+                提取时域和频域特征。情绪识别模型基于支持向量机，结合DEAP数据集与自采集数据进行训练与验证。<br>
+                用户通过网站程序可查看情绪状态，个性化设定提醒功能。未来，该技术有望应用于临床环境。
+            </p>
+            <!--<img src="data:image/png;base64,{{ image_data }}" alt="" class="confusion_matrix">-->
+            <img src="{{ url_for('static', filename='img/project.png') }}" width="800" height="375">
+        </div>
+    </div>
+</body>
+
+</html>

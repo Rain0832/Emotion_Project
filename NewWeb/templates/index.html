@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" http-equiv="refresh" content="1000">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normal.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+
+<body class="body" >
+    <!-- 导航栏 start-->
+    <div class="nav">
+        <!-- 侧边栏 start -->
+        <div class="nav-sidebar">
+            <div class="wrap">
+                <div class="nav-brand">  
+                    <a href="#" class="nav-logo">EMOTION</a>
+                    <a href="#" class="nav-toggle">
+                        <img src="{{ url_for('static', filename='img/iconfont/选项.svg') }}" alt="" class="icon">
+                    </a>
+                </div>
+                <div class="nav-list">
+                    <a href="http://127.0.0.1:5000/" class="nav-icon  active">
+                        <img  src="{{ url_for('static', filename='img/iconfont/主页.svg') }}" alt="" class="icon">
+                        <span>主页</span>
+                    </a>
+                    <a href="http://127.0.0.1:5000/team" class="nav-icon">
+                        <img src="{{ url_for('static', filename='img/iconfont/团队.svg') }}" alt="" class="icon">
+                        <span>团队</span>
+                    </a>
+                    <a href="http://127.0.0.1:5000/consult" class="nav-icon">                        
+                        <img src="{{ url_for('static', filename='img/iconfont/交谈.svg') }}" alt="" class="icon">
+                        <span>咨询</span>
+                    </a>
+                    <a href="http://127.0.0.1:5000/project" class="nav-icon">                        
+                        <img src="{{ url_for('static', filename='img/iconfont/项目.svg') }}" alt="" class="icon">
+                        <span>项目</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- 侧边栏 end -->
+         <!-- 导航条 start -->
+        <div class="nav-up">
+            <div class="wrap">
+                <div class="search">
+                    <input type="text" placeholder="情绪类型" >
+                    <button id="search-icon"><img src="{{ url_for('static', filename='img/iconfont/搜索.svg') }}" alt="" class="icon"></button>
+                </div>
+                <div class="nav-bar">
+                    <ul>
+                        <li class="button">
+                            <a href="http://127.0.0.1:5000/sign">注册</a>
+                        </li>
+                        <li><span class="string">|</span></li>
+                        <li class="button">
+                            <a href="http://127.0.0.1:5000/sign">登录</a>
+                        </li>
+                        <li class="user button">
+                            <a href="#" class="user-wrap">
+                                <img src="{{ url_for('static', filename='img/头像.jpg') }}" alt="" class="head-portrait">
+                                <span>用户</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        <!-- 导航条 end-->
+        </div>
+    </div>
+    <!-- 导航栏 end -->
+    <div class="content" style="overflow-y: scroll;">
+        <div class="cover"><img src="{{ url_for('static', filename='img/封面.jpeg') }}" alt=""></div>
+        <div class="wrap">
+            <h1>拥有好的情绪，拥抱好的生活!</h1>
+            <div class="underline">__________________</div>
+            <div><a href="http://127.0.0.1:5000/test" class="start"><img src="{{ url_for('static', filename='img/iconfont/开始.svg') }}" alt="" class="icon">START MEARSURE</a></div>
+        </div>
+    </div>
+</body>
+
+</html>

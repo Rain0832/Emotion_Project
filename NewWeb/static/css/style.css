@@ -1,0 +1,217 @@
+/* 边界处理 */
+::after,::before{
+    box-sizing: border-box;
+}
+
+body{
+    width:100%;
+    height: 100vh;
+    position: relative;
+    margin: 0;
+    padding: 0 0 0 0;
+    transition: 0.5s;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.string{
+    color: #b4b4b4;
+}
+.head-portrait{
+    width: 30px;
+    border-radius: 100px;
+    overflow: hidden;
+}
+.icon{
+    width: 22px;
+    height: 22px;
+}
+
+
+
+.nav-sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: rgb(92, 102, 171);
+    padding: 1.5rem 1.5rem 2rem;
+    overflow: hidden;
+}
+.nav-sidebar span{
+    color: white;
+}
+
+.nav-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.nav-brand{
+    display: grid;
+    grid-template-columns: max-content max-content;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.nav-toggle{
+    font-size: 1.25rem;
+    padding: 0.75rem;
+    cursor: pointer;
+}
+.nav-logo{
+    color: white;
+    font-size: larger;
+    font-weight: 400;
+}
+.nav-icon{
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    column-gap: 0.75rem;
+    padding: 1.25rem 0.75rem;
+    color: white;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.nav-icon:hover{
+    box-shadow: 5px 5px 0px 5px rgba(0, 0, 0, 0.4);
+    font-size: larger;
+    background-color: rgb(254, 176, 5);
+}
+.active{
+    background-color: rgb(254, 176, 5)
+}
+
+.nav-up{
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    background-color: rgb(92, 102, 171);
+    margin-top: 0;
+    margin-left: 298px;
+    border-left: 1px solid rgb(92, 102, 171);
+    line-height: 20px;
+}
+.nav-up .wrap{
+    padding: 0 2rem;
+    margin: 0 auto;
+    float: left;
+    width: 1100px;
+    height: 60px;
+    align-items: center;
+}
+#search-icon{
+    padding-left: 10px;
+}
+.nav-up .wrap .search{
+    background-color: rgb(92, 102, 171);
+    display: flex;
+    align-items: center;
+    margin: auto auto;
+    position: relative;
+    padding: 12.4px 0 ;
+    float: left;
+    width: 700px;
+}
+.nav-up .wrap .search button{
+    color: white;
+    background-color: rgb(92, 102, 171);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.nav-up .wrap .nav-bar{
+    color: white;
+    width: 300px;
+    height: 60px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    float: left;
+    margin: auto;
+}
+.nav-up .wrap .nav-bar ul{
+    display: flex;
+    align-items: center;
+}
+.nav-up .wrap .nav-bar li{
+    display: flex;
+    margin: 0 5px;
+    align-items: center;
+    float: left;
+}
+.nav-up .wrap .nav-bar li a{
+    border-radius: 0.5rem;
+    color: white;
+}
+.nav-up .wrap .search input{
+    padding: 0 10px;
+    width: 650px;
+    height: 30px;
+    outline: none;
+    display: flex;
+    align-items: center;
+}
+.user{
+    padding-left: 50px;
+}
+.nav-up .wrap .nav-bar li a:hover{
+    background-color: rgb(254, 176, 5);
+}
+.nav-up .wrap .nav-bar li a .user-wrap{
+    padding: 0 20px;
+}
+::-webkit-scrollbar{
+    width: 10px;
+    height: 100%;
+    background-color: rgb(92, 102, 171);
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(254, 176, 5);
+    border-radius: 15px;
+}
+.content{
+    overflow-y: scroll;
+    text-align: center;
+    position: fixed;
+    margin-left: 298px;
+    margin-top: 60px;
+    width: 1230px;
+    height: 100vh;
+
+
+}
+.content .wrap{
+    color: rgb(50, 54, 118);
+    margin: 0 auto;
+    left: 10px;
+    width: 1000px;
+    height: 100vh;
+
+
+
+}
+.content .wrap .confusion_matrix{
+    margin-top: 50px;
+    width: 500px;
+
+}
+
+.background{
+    opacity: 70%;
+    width: 100%;
+    height: 100vh;
+}
+.start{
+    font-size: larger;
+
+    color: rgb(50, 54, 118);
+    background-color: rgb(254, 176, 5);
+
+}

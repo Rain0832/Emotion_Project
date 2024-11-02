@@ -1,0 +1,22 @@
+说明：
+第1幅
+601~892共1个测试集（6特征）上，共50特征
+对应程序E:\python312\python.exe E:\2大学项目\选择合适的特征\SHAP选特征\3.SHAP.py 
+explainer_new = shap.KernelExplainer(svm_model.predict_proba, 一个样本6特征)# 应该传入训练集
+shap_values = explainer_new.shap_values(X_test)
+shap.summary_plot(shap_values[:, :, 1], X_test)
+
+
+
+第2幅： 
+E:\python312\python.exe E:\2大学项目\选择合适的特征\SHAP选特征\3.1SHAP.py 
+X_train, X_test, y_train, y_test = X[:800], X[800:], y[:800], y[800:]
+explainer_new = shap.KernelExplainer(svm_model.predict_proba, X_test)
+shap_values = explainer_new.shap_values(X_test)
+shap.summary_plot(shap_values[:, :, 1], X_test)
+50特征
+
+图3：50特征在测试集的第一的样本上，对标签1的shap
+
+主图1：以前300训练集作为背景数据，后192测试集上计算50特征的SHAP值
+后面5图是放大

@@ -1,0 +1,1 @@
+[hdr, record] = edfread('C:\Users\sl016\Desktop\英语演讲\DEAP\data original\s01.bdf');
